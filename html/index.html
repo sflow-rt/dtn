@@ -1,0 +1,68 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/png" href="../../../inc/img/favicon.png">
+    <link rel="stylesheet" href="../../../inc/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../inc/stripchart.css">
+    <link rel="stylesheet" href="css/app.css">
+    <script type="text/javascript" src="../../../inc/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../inc/jquery.widget.js"></script>
+    <script type="text/javascript" src="../../../inc/jquery.stripchart.js"></script>
+    <script type="text/javascript" src="../../../inc/popper.min.js"></script>
+    <script type="text/javascript" src="../../../inc/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <title>Data Transfer Node Metrics</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #336;">
+      <a class="navbar-brand" href="#">
+        <img src="../../../inc/img/inmon.svg" height="30" class="d-inline-block align-top">
+        Data Transfer Node Metrics
+      </a>
+    </nav>
+    <main class="container-fluid" role="main">
+      <div class="row mt-3">
+        <div class="col-lg-6">
+          <div class="card mb-3">
+            <h5 class="card-header">Throughput</h5>
+            <div class="card-body">  
+              <div id="bps-trend" class="trend mt-3 mb-3"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card mb-3">
+            <h5 class="card-header">RTT</h5>
+            <div class="card-body">
+              <div id="rtt-trend" class="trend mt-3 mb-3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-lg-6">
+          <div class="card mb-3">
+            <h5 class="card-header">Avg. Packet Size</h5>
+            <div class="card-body">
+              <div id="size-trend" class="trend mt-3 mb-3"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card mb-3">
+            <h5 class="card-header">Packets in Flight</h5>
+            <div class="card-body">
+              <div id="unacked-trend" class="trend mt-3 mb-3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer page-footer border-top">
+       <div class="footer-copyright text-center py-2">
+         <small class="text-muted">Copyright &copy; 2023 InMon Corp. ALL RIGHTS RESERVED</small>
+       </div>
+    </footer>
+  </body>
+</html>
