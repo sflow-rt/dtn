@@ -34,6 +34,10 @@ $(function() {
   size_chart.bind('stripchartclick', chartClick);
   var unacked_chart = $('#unacked-trend').stripchart({clickable:true}); 
   unacked_chart.bind('stripchartclick', chartClick);
+  var rttwait_chart = $('#rttwait-trend').stripchart({clickable:true,includeMillis:true});
+  rttwait_chart.bind('stripchartclick', chartClick);
+  var rttsdev_chart = $('#rttsdev-trend').stripchart({clickable:true,includeMillis:true});
+  rttsdev_chart.bind('stripchartclick', chartClick);
 
   function chartData(trend,sort,metric,units,stack) {
     var val, cdata, idx, topn, lines, labels, legend, sortedKeys, k, keyToIdx, seriesOptions, key, line, i, cvals, entry, colors;
@@ -111,6 +115,8 @@ $(function() {
     rtt_chart.stripchart('draw', chartData('dtn-pair','bps','rtt','Seconds',false)); 
     size_chart.stripchart('draw', chartData('dtn-pair','bps','size','Bytes',false));
     unacked_chart.stripchart('draw', chartData('dtn-pair','bps','unacked','Packets',false));
+    rttwait_chart.stripchart('draw', chartData('dtn-pair','bps','rttwait','Seconds',false));
+    rttsdev_chart.stripchart('draw', chartData('dtn-pair','bps','rttsdev','Seconds',false));
   }
 
   function updateData(data) {

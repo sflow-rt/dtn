@@ -1,6 +1,6 @@
 // author: InMon Corp.
-// version: 0.1
-// date: 9/14/2023
+// version: 0.2
+// date: 9/18/2023
 // description: Data Transfer Node Metrics
 // copyright: Copyright (c) 2023 InMon Corp. ALL RIGHTS RESERVED
 
@@ -12,7 +12,7 @@ var points = {};
 setFlow('dtn-pair', {
   keys:'ip6source,ip6destination,null:[map:[bits:ip6flowlabel:261884]:scitag]:unknown',
   value: 'bytes',
-  values: ['avg:bytes','avg:tcprtt','avg:tcpunacked'],
+  values: ['avg:bytes','avg:tcprtt','avg:tcpunacked','avg:tcprttwait','avg:tcprttsdev'],
   t: 5
 });
 
@@ -26,7 +26,10 @@ setIntervalHandler(function(now) {
         bps:entry.value*8,
         size:entry.values[0],
         rtt:entry.values[1]*0.000001,
-        unacked:entry.values[2]};
+        unacked:entry.values[2],
+        rttwait:entry.values[3]*0.000001,
+        rttsdev:entry.values[4]*0.000001
+      };
     });
   }
   points['dtn-pair'] = topN;
