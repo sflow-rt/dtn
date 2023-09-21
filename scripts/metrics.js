@@ -1,6 +1,6 @@
 // author: InMon Corp.
-// version: 0.2
-// date: 9/18/2023
+// version: 0.3
+// date: 9/21/2023
 // description: Data Transfer Node Metrics
 // copyright: Copyright (c) 2023 InMon Corp. ALL RIGHTS RESERVED
 
@@ -13,6 +13,7 @@ setFlow('dtn-pair', {
   keys:'ip6source,ip6destination,null:[map:[bits:ip6flowlabel:261884]:scitag]:unknown',
   value: 'bytes',
   values: ['avg:bytes','avg:tcprtt','avg:tcpunacked','avg:tcprttwait','avg:tcprttsdev'],
+  filter: 'tcpsourceport=1094|tcpdestinationport=1094',
   t: 5
 });
 
